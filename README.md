@@ -4,7 +4,7 @@
 
 本项目旨在通过使用OpenAI API调用大型语言模型（LLM），实现对B站视频内容的总结功能。目前项目有两种使用方式，一是使用FastAPI构建的纯后端服务，通过API的形式去调用总结功能，其中，后端支持流式输出和非流式输出两种模式。二是使用Streamlit搭建的简洁直观的UI界面。
 
-**详细了解链接**：
+**详细了解链接**：[使用大模型总结B站视频 | RisingIce (imrising.cn)](https://www.imrising.cn/2024/09/13/大模型总结B站视频/)
 
 ### 安装步骤
 
@@ -24,23 +24,9 @@ conda activate env_name
 pip install -r requirement.txt
 ```
 
-2.下载Embedding Model
+2.填写相关的配置文件参数，配置文件位于`/bilibili_summary/server/config.py`
 
-链接：[google-bert/bert-base-chinese · Hugging Face](https://huggingface.co/google-bert/bert-base-chinese)
-
-国内的可使用这个链接：[google-bert/bert-base-chinese · HF Mirror (hf-mirror.com)](https://hf-mirror.com/google-bert/bert-base-chinese)
-
-```bash
-#进入项目目录
-cd bilibili_summary
-
-#复制model file 至bilibili_summary/model 目录下
-cp -r bert-base-chinese bilibili_summary/model
-```
-
-3.填写相关的配置文件参数，配置文件位于`/bilibili_summary/server/config.py`
-
-4.启动项目
+3.启动项目
 
 ```bash
 #启动FastAPI服务
@@ -119,7 +105,7 @@ streamlit run streamlit_ui/summary_ui.py
 
 界面如下：
 
-![](https://img.picgo.net/2024/09/13/imagea08eb38f228e91d0.png)
+![](https://img.picgo.net/2024/09/13/image5ee256bf1e341474.png)
 
 ![](https://img.picgo.net/2024/09/13/image4cac0652b27e4bd8.png)
 
