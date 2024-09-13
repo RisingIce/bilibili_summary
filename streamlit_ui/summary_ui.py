@@ -16,7 +16,6 @@ class BiliBiliTool:
         # 初始化llm（语言模型）
         self._llm = ChatOpenAI(model=openai_model, openai_api_key=openai_api_key, openai_api_base=openai_api_base, max_tokens=1024, temperature=0, streaming=True)
         # 初始化embeddings（嵌入模型）
-        self._embedding_model = HuggingFaceEmbeddings(model_name=embedings_path, model_kwargs={'device': f'{embedings_device}'})
         self._sessdata = sessdata
         self._buvid3 = buvid3
         self._bili_jct = bili_jct
@@ -102,10 +101,6 @@ openai_model = st.sidebar.text_input(label="Openai Model")
 openai_api_key = st.sidebar.text_input(label="Openai API Key",type="password")
 openai_api_base = st.sidebar.text_input(label="Openai API Base")
 
-st.sidebar.text("Embedings Model相关参数设置:")
-embedings_path = st.sidebar.text_input(label="Embedings Model Absolute Path")
-embedings_device = st.sidebar.selectbox(label="Embedings Device",options=['cuda','cpu',"mps", "npu"])
-
 st.sidebar.text("文本分割器参数设置:")
 chunk_size = int(st.sidebar.text_input(label="chunk_size",value=1000))
 chunk_overlap =int(st.sidebar.text_input(label="chunk_overlap",value=20))
@@ -132,7 +127,6 @@ params = {
     "openai_model":openai_model,
     "openai_api_key":openai_api_key,
     "openai_api_base":openai_api_base,
-    "embedings_path":embedings_path,
 }
 
 if check_params(params):
