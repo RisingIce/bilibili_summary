@@ -4,7 +4,7 @@
 
 本项目旨在通过使用OpenAI API调用大型语言模型（LLM），实现对B站视频内容的总结功能。目前项目有两种使用方式，一是使用FastAPI构建的纯后端服务，通过API的形式去调用总结功能，其中，后端支持流式输出和非流式输出两种模式。二是使用Streamlit搭建的简洁直观的UI界面。
 
-**详细了解链接**：[使用大模型总结B站视频 | RisingIce (imrising.cn)](https://www.imrising.cn/2024/09/13/大模型总结B站视频/)
+**详细了解链接**：[使用大模型总结B站视频 | RisingIce (imrising.cn)](https://www.imrising.cn/posts/2024/0913)
 
 ### 安装步骤
 
